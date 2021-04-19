@@ -33,8 +33,23 @@ function getWidth() {
 // When size is submitted by the user, call makeGrid()
 
 
-
 function makeGrid() {
 
+    let height = getHeight();
+    let width = getWidth();
+
+    PIXEL_CANVAS.innerHTML = ' ';
+
+    for(let rows = 1; rows <= height; rows++) {
+
+        let row = document.createElement('tr');
+
+        for(let colunms = 1; colunms <= width; colunms++){
+            let colunm = document.createElement('td');
+
+            row.appendChild(colunm);
+        }
+
+        PIXEL_CANVAS.appendChild(row);
     }
 }
