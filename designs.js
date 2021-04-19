@@ -36,7 +36,7 @@ function makeGrid() {
         for(let colunms = 1; colunms <= width; colunms++){
             let colunm = document.createElement('td');
             
-            colunm.addEventListener('click', () => {
+            colunm.addEventListener('click', function() {
                 paintPixel(this);
             });
 
