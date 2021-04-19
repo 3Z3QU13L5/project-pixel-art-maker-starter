@@ -8,7 +8,7 @@ const PIXEL_CANVAS = document.getElementById('pixelCanvas');
 
 // Select color input
 
-function getColor() {    
+function getColor() {
     let color = COLOR_PICKER.value;
     return color;
 }
@@ -32,6 +32,10 @@ function getWidth() {
 
 // When size is submitted by the user, call makeGrid()
 
+SIZE_PICKER.addEventListener('submit', (event) => {
+    makeGrid();
+    event.preventDefault();
+});
 
 function makeGrid() {
 
@@ -46,6 +50,10 @@ function makeGrid() {
 
         for(let colunms = 1; colunms <= width; colunms++){
             let colunm = document.createElement('td');
+            
+            colunm.addEventListener('click', () => {
+                paintPixel(this);
+            });
 
             row.appendChild(colunm);
         }
